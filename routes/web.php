@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+//Rutas para el juego que muestra las preguntas de a una
+Route::get('/iniciar','GameController@index')->name('iniciar');
+Route::get('/comenzar/{id}','GameController@comenzar')->name('comenzar');
+Route::post('/respuesta','GameController@respuesta')->name('respuesta');
+Route::get('/pregunta','GameController@pregunta')->name('pregunta');
+
+//Rutas para el juego que se muestra en una sola pagina
+Route::get('/unico/iniciar','GameUniqueController@index')->name('iniciar_unico');
+Route::get('/unico/comenzar/{id}','GameUniqueController@comenzar')->name('comenzar_unico');
+Route::post('/unico/respuesta','GameUniqueController@resultado')->name('respuesta_unico');
+
+//Rutas para el ranking
