@@ -11,6 +11,6 @@ Ejemplo de juego de preguntas y respuestas desarrollado en laravel
 ```
 ### Windows
 ```shell
-    mv ./build/docker-compose.yml.dist ./docker-compose.yml
+    move ./build/docker-compose.yml.dist ./docker-compose.yml
     docker-compose up -d --build
 ``` 
