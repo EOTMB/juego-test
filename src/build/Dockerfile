@@ -40,13 +40,13 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 COPY . /var/www
 # Copy existing application directory permissions
 COPY --chown=www:www . /var/www
-
+RUN chmod +x /var/www/build/build.sh
 # Change current user to www
 USER www
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
-CMD ["sh","-c","./build/install.sh"]
+CMD ["sh","-c","/var/www/build/build.sh"]
 
     
     
